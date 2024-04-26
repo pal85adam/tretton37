@@ -2,11 +2,11 @@
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import App from './App';
+import HomePage from './pages/HomePage';
 
 describe('App', () => {
-  it('Click on the Vite and React logos to learn more', () => {
-    render(<App />);
-    expect(screen.getByRole('button')).toHaveTextContent('count is');
+  it('Home page contains HomePage', () => {
+    render(<HomePage />);
+    expect(screen.getByRole('paragraph')).toHaveTextContent('HomePage');
   });
 });
