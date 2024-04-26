@@ -11,7 +11,7 @@
     "lint": "eslint . --ignore-path ./.gitignore --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:staged": "lint-staged",
     "prepare": "husky",
-    "test": "vitest --run **/*.test.js",
+    "test": "vitest --run **/*.test.{js,jsx,ts,tsx}",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
@@ -19,6 +19,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.4",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
