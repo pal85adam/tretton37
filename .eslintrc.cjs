@@ -9,11 +9,12 @@ module.exports = {
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '**/*.css'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

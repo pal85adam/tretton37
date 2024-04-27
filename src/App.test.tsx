@@ -1,4 +1,3 @@
-// sum.test.js
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
@@ -7,9 +6,11 @@ import HomePage from './pages/HomePage';
 import App from './App';
 
 describe('App', () => {
-  it('Home page contains HomePage', () => {
+  it('The fellowshop of the tretton37', () => {
     render(<HomePage />);
-    expect(screen.getByRole('paragraph')).toHaveTextContent('HomePage');
+    expect(
+      screen.getByText('The fellowshop of the tretton37'),
+    ).toBeInTheDocument();
   });
 });
 

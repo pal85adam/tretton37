@@ -27,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -36,17 +37,23 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-logical": "^3.0.1",
     "typescript": "^5.4.5",
     "vite": "^4.2.0",
     "vitest": "^1.5.2"
   },
   "lint-staged": {
     "src/**/*.{js,css,ts,tsx,jsx}": [
-      "yarn run format",
+      "yarn run format"
+    ],
+    "src/**/*.{js,ts,tsx,jsx}": [
       "yarn run lint"
     ]
   }
