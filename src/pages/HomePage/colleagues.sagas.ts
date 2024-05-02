@@ -3,9 +3,9 @@ import {
   setLoadingTrue,
   setLoadingFalse,
   setColleagues,
-  Colleague,
 } from './colleagues.slice';
 import configs from '../../configs';
+import { Colleague } from '../../types/common';
 
 export const colleaguesActions = {
   SET_COLLEAGUES: 'SET_COLLEAGUES',
