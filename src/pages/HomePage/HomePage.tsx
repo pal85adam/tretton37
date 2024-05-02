@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useTypedDispatch, useTypedSelector } from '../../state/store';
 import { colleaguesActions } from './colleagues.sagas';
 import ColleagueCard from './components/ColleagueCard';
+import Loader from '../../components/Loader';
 
 function HomePage() {
   const { colleagues, loading } = useTypedSelector((state) => state.colleagues);
@@ -19,7 +20,9 @@ function HomePage() {
       <div className="flex w-full max-w-7xl items-center justify-center rounded bg-white text-lg text-stone-200 shadow-md bs-20 md:text-xl xl:text-3xl">
         Potential filter and tools area
       </div>
-      {!loading && (
+      {loading ? (
+        <Loader />
+      ) : (
         <ul className="grid grid-cols-1 gap-8 plb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {colleagues.map((colleague) => (
             <ColleagueCard key={colleague.email} colleague={colleague} />
