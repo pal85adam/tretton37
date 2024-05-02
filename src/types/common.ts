@@ -26,3 +26,8 @@ export interface Colleague {
   secondaryRole?: string | null;
   area?: string | null;
 }
+
+export interface ColleagueFilters {
+  name: string;
+  office: string;
+}
