@@ -28,7 +28,7 @@ function ColleagueCard({ colleague }: { colleague: Colleague }) {
           <div>Office: {colleague.office}</div>
         </div>
         <div className="flex justify-end is-20 children:ms-1">
-          {colleague.linkedIn && (
+          {colleague.gitHub && (
             <a href={`https://github.com/${colleague.gitHub}`}>
               <Github />
             </a>
