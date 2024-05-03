@@ -1,28 +1,26 @@
 name: Tretton37CI
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Update app
+      - name: Update Application
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            export PATH="$HOME/.nvm/versions/node/$(nvm current)/bin:$PATH"
             cd /var/www/html/tretton37
             rm -rf node_modules yarn.lock
             git switch master
             git reset --hard origin/master
             git pull
             yarn
+            yarn build
             cd /var/www/html
             pm2 stop tretton37
             pm2 delete tretton37
@@ -30,6 +28,3 @@ jobs:
             pm2 start ecosystem.config.js --env production
             pm2 save
             pm2 log tretton37 --nostream
-        env:
-          ACTIONS_STEP_DEBUG: true
-          ACTIONS_RUNNER_DEBUG: true
