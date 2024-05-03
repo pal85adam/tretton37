@@ -29,17 +29,26 @@ function ColleagueCard({ colleague }: { colleague: Colleague }) {
         </div>
         <div className="flex justify-end is-20 children:ms-1">
           {colleague.gitHub && (
-            <a href={`https://github.com/${colleague.gitHub}`}>
+            <a
+              href={`https://github.com/${colleague.gitHub}`}
+              className="rounded-full transition duration-500 bs-6 hover:scale-125"
+            >
               <Github />
             </a>
           )}
           {colleague.linkedIn && (
-            <a href={`https://www.linkedin.com/in/${colleague.linkedIn}`}>
+            <a
+              href={`https://www.linkedin.com/in/${colleague.linkedIn}`}
+              className="rounded-full transition duration-500 bs-6 hover:scale-125"
+            >
               <Linkedin />
             </a>
           )}
           {colleague.twitter && (
-            <a href={`https://twitter.com/${colleague.twitter}`}>
+            <a
+              href={`https://twitter.com/${colleague.twitter}`}
+              className="rounded-full transition duration-500 bs-6 hover:scale-125"
+            >
               <Twitter />
             </a>
           )}
