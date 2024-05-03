@@ -29,6 +29,8 @@ describe('Bad route', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(screen.getByText('NotFound')).toBeInTheDocument();
+    expect(
+      screen.getByText("Oops! Looks like you're lost."),
+    ).toBeInTheDocument();
   });
 });
