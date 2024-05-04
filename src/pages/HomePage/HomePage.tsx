@@ -41,7 +41,7 @@ function HomePage() {
   }, [handleScroll]);
 
   return (
-    <div className="flex flex-col items-center is-full">
+    <div className="flex flex-col items-center is-full pli-4">
       <div className="flex items-center text-lg font-bold bs-20 is-full max-is-screen-xl md:text-xl xl:text-3xl">
         The fellowshop of the tretton37
       </div>
