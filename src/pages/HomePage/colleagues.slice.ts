@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { sortBy } from 'lodash';
 import { Colleague, ColleagueFilters } from '../../types/common';
 
 interface ColleaguesState {
@@ -69,9 +70,21 @@ const ColleaguesSlice = createSlice({
                 .includes(filters.office.toLowerCase())),
       );
     },
+    sortColleaguesBy: (
+      state,
+      action: PayloadAction<keyof ColleagueFilters>,
+    ) => {
+      const sortKey = action.payload;
+      state.colleaguesFiltered = sortBy(state.colleaguesFiltered, sortKey);
+    },
   },
 });
 
-export const { setColleagues, setLoadingTrue, setLoadingFalse, setFilters } =
-  ColleaguesSlice.actions;
+export const {
+  setColleagues,
+  setLoadingTrue,
+  setLoadingFalse,
+  setFilters,
+  sortColleaguesBy,
+} = ColleaguesSlice.actions;
 export const ColleaguesReducer = ColleaguesSlice.reducer;

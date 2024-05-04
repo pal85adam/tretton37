@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useTypedDispatch, useTypedSelector } from '../../../state/store';
-import { setFilters } from '../colleagues.slice';
+import { ColleagueFilters } from '../../../types/common';
+import { setFilters, sortColleaguesBy } from '../colleagues.slice';
 
 export default function FilterContainer() {
   const { filters } = useTypedSelector((state) => state.colleagues);
@@ -67,10 +68,15 @@ export default function FilterContainer() {
             <select
               id="sortby"
               className="block rounded-md border border-gray-200 shadow-sm outline-none is-full mbs-2 plb-2 pli-2 focus:border-blue-500 focus:ring focus:ring-blue-200/50"
+              onChange={(e) => {
+                const { value } = e.target;
+                if (value)
+                  dispatch(sortColleaguesBy(value as keyof ColleagueFilters));
+              }}
             >
-              <option>--</option>
-              <option>Name</option>
-              <option>Office</option>
+              <option value="">---</option>
+              <option value="name">Name</option>
+              <option value="office">Office</option>
             </select>
           </div>
         </div>
