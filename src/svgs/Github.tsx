@@ -1,11 +1,11 @@
 import { SVGType } from '../types/common';
 
-function Github({ className, width, height }: SVGType) {
+function Github({ className = '', width = '24', height = '24' }: SVGType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width || '24'}
-      height={height || '24'}
+      width={width}
+      height={height}
       className={className}
       fill="none"
       viewBox="0 0 1024 1024"
@@ -19,13 +19,5 @@ function Github({ className, width, height }: SVGType) {
     </svg>
   );
 }
-
-Github.defaultProps = {
-  className: '',
-  fillg: null,
-  fillp: null,
-  width: null,
-  height: null,
-};
 
 export default Github;

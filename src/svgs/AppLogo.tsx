@@ -1,11 +1,16 @@
 import { SVGType } from '../types/common';
 
-function AppLogo({ className, fillp, width, height }: SVGType) {
+function AppLogo({
+  className = '',
+  fillp = '',
+  width = '800',
+  height = '800',
+}: SVGType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width || '800'}
-      height={height || '800'}
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       className={className}
     >
@@ -16,13 +21,5 @@ function AppLogo({ className, fillp, width, height }: SVGType) {
     </svg>
   );
 }
-
-AppLogo.defaultProps = {
-  className: '',
-  fillg: null,
-  fillp: null,
-  width: null,
-  height: null,
-};
 
 export default AppLogo;

@@ -2,8 +2,8 @@ export type SVGType = {
   className?: string;
   fillg?: string;
   fillp?: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
 };
 
 export interface Colleague {
