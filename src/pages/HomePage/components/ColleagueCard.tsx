@@ -38,7 +38,7 @@ function ColleagueCard({ colleague }: { colleague: Colleague }) {
           )}
           {colleague.linkedIn && (
             <a
-              href={`https://www.linkedin.com/in/${colleague.linkedIn}`}
+              href={`https://www.linkedin.com${colleague.linkedIn}`}
               className="rounded-full transition duration-500 bs-6 hover:scale-125"
             >
               <Linkedin />
